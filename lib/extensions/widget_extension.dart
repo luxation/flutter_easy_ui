@@ -24,12 +24,14 @@ import 'package:flutter/material.dart';
 
 /// Extensions Methods for Widgets
 extension WidgetUtils on Widget {
+  /// Center a widget
   Widget center() {
     return Center(
       child: this,
     );
   }
 
+  /// Place the widget inside a container
   Widget contain({double width, double height}) {
     return Container(
       width: width,
@@ -38,26 +40,57 @@ extension WidgetUtils on Widget {
     );
   }
 
+  /// Add padding to a widget
   Widget padding(
-      {@required double defaultValue,
+      {double value = 0.0,
       double top,
       double right,
       double bottom,
       double left}) {
     return Padding(
       padding: EdgeInsets.only(
-          top: top ?? defaultValue,
-          right: right ?? defaultValue,
-          bottom: bottom ?? defaultValue,
-          left: left ?? defaultValue),
+          top: top ?? value,
+          right: right ?? value,
+          bottom: bottom ?? value,
+          left: left ?? value),
       child: this,
     );
   }
 
+  /// Add a tap callback to a widget
   Widget onTap(Function onTap) {
     return GestureDetector(
       onTap: onTap,
       child: this,
+    );
+  }
+}
+
+/// Extensions Methods for List<Widget>
+extension ListWidgetExtension on List<Widget> {
+  /// Convert a list of widgets to a row
+  Widget row(
+      {MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+      CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.start,
+      MainAxisSize mainAxisSize = MainAxisSize.min}) {
+    return Row(
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: crossAxisAlignment,
+      mainAxisSize: mainAxisSize,
+      children: this,
+    );
+  }
+
+  /// Convert a list of widgets to a column
+  Widget column(
+      {MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+        CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.start,
+        MainAxisSize mainAxisSize = MainAxisSize.min}) {
+    return Column(
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: crossAxisAlignment,
+      mainAxisSize: mainAxisSize,
+      children: this,
     );
   }
 }
