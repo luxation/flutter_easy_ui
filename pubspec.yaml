@@ -1,8 +1,8 @@
 name: flutter_easy_ui
-description: A new Flutter package project.
+description: A set of tools to facilitate UI writing in Flutter.
 version: 0.0.1
-author:
-homepage:
+author: Alexandre El Khoury<alex.khoury.perso@gmail.com>
+homepage: https://github.com/luxation/flutter_easy_ui.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
