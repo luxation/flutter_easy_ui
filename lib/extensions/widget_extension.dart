@@ -25,15 +25,17 @@ import 'package:flutter/material.dart';
 /// Extensions Methods for Widgets
 extension WidgetUtils on Widget {
   /// Center a widget
-  Widget center() {
+  Widget center({Key key}) {
     return Center(
+      key: key,
       child: this,
     );
   }
 
   /// Place the widget inside a container
-  Widget contain({double width, double height}) {
+  Widget contain({Key key, double width, double height}) {
     return Container(
+      key: key,
       width: width,
       height: height,
       child: this,
@@ -42,12 +44,14 @@ extension WidgetUtils on Widget {
 
   /// Add padding to a widget
   Widget padding(
-      {double value = 0.0,
+      {Key key,
+      double value = 0.0,
       double top,
       double right,
       double bottom,
       double left}) {
     return Padding(
+      key: key,
       padding: EdgeInsets.only(
           top: top ?? value,
           right: right ?? value,
@@ -56,6 +60,20 @@ extension WidgetUtils on Widget {
       child: this,
     );
   }
+
+  ///Hides a widget
+  Widget hide({Key key, bool visible = false}) => Visibility(
+        key: key,
+        child: this,
+        visible: visible,
+      );
+
+  /// Expand the widget
+  Widget expand({Key key, int flex = 1}) => Expanded(
+        key: key,
+        flex: flex,
+        child: this,
+      );
 
   /// Add a tap callback to a widget
   Widget onTap(Function onTap) {
@@ -84,8 +102,8 @@ extension ListWidgetExtension on List<Widget> {
   /// Convert a list of widgets to a column
   Widget column(
       {MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
-        CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.start,
-        MainAxisSize mainAxisSize = MainAxisSize.min}) {
+      CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.start,
+      MainAxisSize mainAxisSize = MainAxisSize.min}) {
     return Column(
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
