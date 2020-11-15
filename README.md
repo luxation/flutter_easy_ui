@@ -1,14 +1,26 @@
-# flutter_easy_ui
+# Flutter Easy UI
 
-A new Flutter package project.
+A set of useful dart extensions and utilities for your Flutter application.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+The plugin contains a set of minimalistic tools and extensions for reducing Flutter code. 
+The repository code is preloaded with some basic extensions on String, num, BuildContext & Widget
+as well as a mixin providing Material Design guideline values for padding.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+
+## Installation
+
+```
+dependencies:
+    flutter_easy_ui:
+      git:
+        url: https://github.com/luxation/flutter_easy_ui
+```
+
+Then import the following dependency when needed
+```dart
+import 'package:flutter_easy_ui/flutter_easy_ui.dart';
+```
+
+## Documentation

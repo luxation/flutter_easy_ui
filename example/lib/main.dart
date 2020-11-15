@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(centerTitle: true, title: Text("ta mere en string de guerre".capitalize()),),
         body: [
-          Text("hello".capitalize()).onTap(
+          Text("hello ${2.43343434343422323.decimalPoint(4)}".capitalize()).onTap(
             () => context.showSnackBar(
               SnackBar(
                 duration: 3.seconds,
