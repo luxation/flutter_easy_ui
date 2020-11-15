@@ -11,7 +11,7 @@ as well as a mixin providing Material Design guideline values for padding.
 
 ## Installation
 
-```
+```yaml
 dependencies:
     flutter_easy_ui:
       git:
