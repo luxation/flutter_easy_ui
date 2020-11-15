@@ -20,37 +20,4 @@
  * SOFTWARE.
  */
 
-/// Extensions Methods for strings
-extension StringExtension on String {
-  /// Check if the string is null or empty
-  bool get isEmptyOrNull => this == null || isEmpty;
-
-  /// Check if string is not blank (null or only white spaces)
-  bool get isNotBlank => this != null && trim().isNotEmpty;
-
-  /// Check if the string is an email
-  bool get isEmail => RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-      .hasMatch(this);
-
-  /// Returns the string if it is not `null`, or the empty string otherwise
-  String get orEmpty => this ?? "";
-
-  ///Returns the capitalized string.
-  ///
-  ///Example:
-  ///```dart
-  ///"hello".capitalize(); // "Hello"
-  ///```
-  String capitalize() => this.length > 1
-      ? "${this[0].toUpperCase()}${substring(1).toLowerCase()}"
-      : this;
-
-  /// Returns a String without any white space
-  ///
-  /// Example:
-  /// ```dart
-  /// "hello world".removeAllWhiteSpace() // "helloworld"
-  /// ```
-  String removeAllWhiteSpace() => replaceAll(RegExp(r"\s+\b|\b\s"), "");
-}
+export 'eui.dart';
